@@ -1,0 +1,13 @@
+#string
+OutputFileName=out
+
+#uint32_t
+SignalThreshold=8200
+IntegrationTime=125
+Gain=500
+Pretrigger=0
+Decimation=300
+
+#int
+NumberOfEvents=100
+EventsInFile=100

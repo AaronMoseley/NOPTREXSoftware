@@ -17,16 +17,21 @@ using namespace std;
 
 class RootInterface
 {
-	public:
-		RootInterface(TTree *tree, time_t *timestampAddr, int *energyAddr, vector<int> *waveformAddr);
+public:
+	RootInterface(TTree* tree, time_t* timestampAddr, vector<vector<uint32_t>>* waveformAddr, int channels);
 
-		RootInterface(TTree *tree, time_t *timestampAddr, int *energyAddr, vector<int> *waveformAddr, string timestampName, string energyName, string waveformName);
+	RootInterface(TTree* tree, time_t* timestampAddr, vector<vector<uint32_t>>* waveformAddr, string timestampName, string waveformName, int channels);
 
-		void WriteData(TTree *tree);
+	void ResetTree(TTree* tree);
 
-		void WriteToFile(TTree *tree, string fileName, string objName);
+	void WriteData(TTree* tree);
 
-		void ReadFile(string fileName, string objName);
+	void WriteToFile(TTree* tree, string fileName, string objName);
+
+	void ReadFile(string fileName, string objName);
+
+private:
+	int numChannels;
 };
 
 #endif
